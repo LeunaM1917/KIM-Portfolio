@@ -1,0 +1,79 @@
+/* Targeted additions to the existing editorial portfolio and theme variables. */
+html { scroll-padding-top: 7rem; }
+body { min-width: 0; }
+section[id], #skills { scroll-margin-top: 1rem; }
+button, a, input, textarea { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+button:disabled { cursor: default; opacity: .35; }
+:focus-visible { outline: 3px solid var(--text-black-900); outline-offset: 4px; }
+main:focus { outline: none; }
+.text-accent, .hero-typing { color: color-mix(in srgb, var(--skin-color) 80%, var(--text-black-900)); }
+.nav-link.active { color: var(--text-black-900); text-decoration: underline; text-decoration-color: var(--skin-color); text-decoration-thickness: 2px; text-underline-offset: 8px; }
+#project-modal-counter { color: var(--text-black-700); }
+[hidden] { display: none !important; }
+.skip-link { position: fixed; top: .75rem; left: 1rem; z-index: 300; transform: translateY(-200%); padding: .75rem 1rem; background: var(--bg-black-100); border: 1px solid var(--text-black-900); }
+.skip-link:focus { transform: translateY(0); }
+.hero-typing { min-height: 2.5em; }
+.portfolio-button { display: inline-flex; min-height: 48px; justify-content: center; align-items: center; border: 1px solid var(--bg-black-50); padding: .85rem 1.4rem; font-size: 1rem; font-weight: 500; color: var(--text-black-900); background: var(--bg-black-100); transition: transform .25s, border-color .25s, background .25s; }
+.portfolio-button.primary { border-color: var(--text-black-900); background: var(--text-black-900); color: var(--bg-black-900); }
+.portfolio-button:hover { border-color: var(--skin-color); transform: translateY(-3px); }
+.skill-category { border-top: 2px solid var(--skin-color); }
+.skill-list { display: flex; flex-wrap: wrap; gap: .65rem; list-style: none; }
+.skill-list li { border: 1px solid var(--bg-black-50); padding: .5rem .7rem; color: var(--text-black-700); font-size: 1rem; line-height: 1.5; }
+.experience-card { border-left: 3px solid var(--skin-color); }
+.experience-meta { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.experience-meta dt { color: var(--text-black-700); font-size: .875rem; }
+.experience-meta dd { margin-top: .3rem; color: var(--text-black-900); font-size: 1rem; }
+.responsibilities { padding-left: 1.2rem; list-style: disc; }
+.responsibilities li::marker { color: var(--skin-color); }
+.project-filters { display: flex; flex-wrap: wrap; gap: .75rem; }
+.project-filter { border: 1px solid var(--bg-black-50); padding: .8rem 1rem; min-height: 48px; background: var(--bg-black-100); color: var(--text-black-700); font-size: .875rem; transition: color .2s, border-color .2s, background .2s; }
+.project-filter:hover { border-color: var(--skin-color); color: var(--text-black-900); }
+.project-filter[aria-pressed="true"] { color: var(--bg-black-900); background: var(--text-black-900); border-color: var(--text-black-900); }
+.project-card { min-width: 0; }
+.project-thumbnail { position: relative; display: block; width: 100%; overflow: hidden; border: 1px solid var(--bg-black-50); background: var(--bg-black-100); }
+.project-thumbnail img { display: block; }
+.video-thumbnail img { background: var(--bg-black-100); }
+.video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 50%; background: var(--bg-black-900); color: var(--text-black-900); box-shadow: 0 4px 20px #0003; }
+.project-action { display: inline-flex; align-items: center; min-height: 44px; font-size: .875rem; font-weight: 500; text-transform: uppercase; letter-spacing: .1em; color: var(--text-black-900); border-bottom: 1px solid var(--skin-color); transition: border-color .2s; }
+.project-action:hover { border-color: var(--text-black-900); }
+.project-modal-panel { max-height: 92dvh; overscroll-behavior: contain; }
+.project-modal-panel > div:first-child { position: sticky; top: 0; z-index: 20; padding-bottom: 1rem; background: var(--bg-black-100); }
+#project-modal-title { overflow-wrap: anywhere; }
+#project-modal-details p + p { margin-top: .5rem; font-size: .875rem; }
+#project-modal-frame.is-video { min-height: 0; padding: .75rem; background: var(--bg-black-900); }
+#project-modal-video { display: block; width: auto; max-width: 100%; height: min(60dvh, 640px); aspect-ratio: 9 / 16; object-fit: contain; background: #111; }
+#project-modal-video.hidden { display: none; }
+#project-modal-dots { flex-wrap: wrap; padding-left: 1rem; padding-right: 1rem; gap: .25rem; }
+.project-dot { display: grid; place-items: center; width: 32px; height: 32px; background: transparent; }
+.project-dot::after { content: ''; display: block; width: 8px; height: 8px; border-radius: 50%; background: var(--bg-black-50); }
+.project-dot.active { transform: none; background: transparent; }
+.project-dot.active::after { background: var(--skin-color); transform: scale(1.2); }
+.contact-link { overflow-wrap: anywhere; text-underline-offset: 4px; }
+.contact-link:hover { text-decoration: underline; }
+.style-switcher .colors button { display: inline-block; height: 30px; width: 30px; border-radius: 50%; }
+.style-switcher .colors button.active { outline: 2px solid var(--text-black-900); outline-offset: 3px; }
+.theme-label { margin: 0 0 10px; color: var(--text-black-700); font-size: 1rem; font-weight: 600; }
+@media (max-width: 1100px) and (min-width: 768px) {
+    #main-nav { gap: .75rem; }
+    #main-nav a { font-size: .75rem; letter-spacing: .08em; }
+}
+@media (max-width: 767px) {
+    html { scroll-padding-top: 6rem; }
+    .style-switcher { top: 140px; }
+    .style-switcher .s-icon { margin-right: 12px; }
+    .experience-meta { grid-template-columns: 1fr; }
+    #project-modal-frame, #project-modal-frame.is-mobile { min-height: 0; }
+    #project-modal-image.mobile-screenshot { max-height: 47dvh; }
+    #project-modal-image.desktop-screenshot { max-height: 48dvh; }
+    #project-modal-video { height: 48dvh; }
+    #project-modal-title { font-size: 1.5rem; }
+    #project-modal .project-modal-panel > div:first-child { gap: .75rem; }
+}
+@media (max-width: 380px) {
+    .portfolio-button, .project-filter { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; transition-delay: 0ms !important; }
+}
